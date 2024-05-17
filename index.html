@@ -211,19 +211,45 @@
           <div class="content has-text-justified">
             <p>
               <!--TODO: write experiments-->
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Vitae proin sagittis nisl rhoncus mattis rhoncus. Amet luctus venenatis lectus magna
-              fringilla. Eu scelerisque felis imperdiet proin fermentum leo. Pellentesque nec nam aliquam sem et tortor
-              consequat id. Malesuada fames ac turpis egestas. Orci eu lobortis elementum nibh tellus molestie nunc non.
-              Sed cras ornare arcu dui. Semper eget duis at tellus at urna condimentum mattis pellentesque. Commodo
-              ullamcorper a lacus vestibulum sed arcu non odio euismod.
-              <!--TODO: insert photos-->
-              <!--TODO: insert graphs? -->
+              We evaluate Lang4sim2real on three task suites agaist non-pretrained baselines, vision-language
+              pretraining baselines, and
+              other sim2real methods on the following tasks. We also conduct ablations to study the effect of language
+              and language granularity on the performance of our method.
             </p>
+          </div>
+          </br>
+          <h2 class="title is-4">Task Suite</h2>
+          <div class="content has-text-justified">
+            <!--TODO: add videos-->
+            <p>videos</p>
+          </div>
+
+          </br>
+          <h2 class="title is-4">Baselines</h2>
+          <div class="content has-text-justified">
+            <!--TODO: Insert graph-->
+            <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselins, and
+              other sim2real methods. We find our method outperforms all 3. Given 100 real demonstrations, it increases
+              performance by an average of 30 percent over the best no pretraining baseline in which we initialize the
+              CNN from stratch and train via BC on either just real, or both simulated and real demonstrations. Compared
+              to R3M as a pretrained baseline, it increases perfomacne over 30% and over 50% compared to CLIP. It also
+              outperforms all 3 of our prior sim2real baselines by an even higher margin, including MMD, domain
+              randomization, and Automatic Domain Randomization with Random Network Adversary.</p>
+          </div>
+
+
+          </br>
+          <h2 class="title is-4">Ablations</h2>
+          <div class="content has-text-justified">
+            <!--TODO: probably write about other things too?-->
+            <p>We perform an ablation to determine the effects of language by using an alternate pretraining objective
+              of classifying the stage of the trajectory rather than regressing to a language annotation. We find that
+              language provides a measurable benefit, especially in multi-step pick-and-place, perhaps because
+              pretraining with language leverages similarities language descriptions between the first and second steps
+              of the pick-and-place task. </p>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!--BibTex citation -->
