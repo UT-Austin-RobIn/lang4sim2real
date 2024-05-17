@@ -24,8 +24,14 @@
   <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 
-  <title>Academic Project Page</title>
+
+  <title>Natural Language Can Help Bridge the Sim2Real Gap</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -45,8 +51,6 @@
 </head>
 
 <body>
-
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -57,18 +61,19 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Albert Yu</a>,</span>
+                <a href="https://scholar.google.com/citations?user=ZzURcb4AAAAJ&hl=en" target="_blank">Albert
+                  Yu</a>,</span>
               <span class="author-block">
                 <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Adeline Foote</a>,</span>
               <span class="author-block">
-                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Raymond Mooney</a>,</span>
+                <a href="https://www.cs.utexas.edu/~mooney/" target="_blank">Raymond Mooney</a>,</span>
               <span class="author-block">
-                <a href="FOURTH AUTHOR PERSONAL LINK" target="_blank">Roberto Mart&iacute;n-Mart&iacute;n</a>
+                <a href="https://robertomartinmartin.com/" target="_blank">Roberto Mart&iacute;n-Mart&iacute;n</a>
               </span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">The University of Texas at Austin</span>
+              <span class="author-block">UT Austin</span>
             </div>
 
             <div class="column has-text-centered">
@@ -196,109 +201,162 @@
               both domains.
             </p>
           </div>
-          <img src="static/images/figure2.png" alt="Figure 2" width="80%" />
+          <div class="content">
+            <img src="static/images/figure.png" alt="Figure 2" width="40%" />
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
 
-  <section class="section">
-    <div class="container">
-      <h2 class="title is-2" style="text-align: center;">Experiments</h2>
-      <div class="columns is-centered">
-        <div class="column is-four-fifths is-centered has-text-centered">
-          <div class="content has-text-justified">
-            <p>
-              We evaluate Lang4sim2real on three task suites agaist non-pretrained baselines, vision-language
-              pretraining baselines, and other sim2real methods on the following tasks. We also conduct ablations to
-              study the effect of language and language granularity on the performance of our method.
-            </p>
-          </div>
-          </br>
-          <h2 class="title is-4">Task Suite</h2>
 
-          <div class="content has-text-justified">
-            <video poster="" id="task-video" autoplay controls muted loop height="100%"
-              style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
-              <source src="static/videos/task-video.mp4" type="video/mp4">
-            </video>
+    <section class="section">
+      <div class="container">
+        <h2 class="title is-2" style="text-align: center;">Experiments</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                We evaluate Lang4sim2real on three task suites agaist non-pretrained baselines, vision-language
+                pretraining baselines, and other sim2real methods on the following tasks. We also conduct ablations to
+                study the effect of language and language granularity on the performance of our method.
+              </p>
+            </div>
+            </br>
+            <h2 class="title is-4 has-text-justified">Task Suite</h2>
 
-          </div>
+            <div class="content has-text-justified">
+              <video poster="" id="task-video" autoplay controls muted loop height="100%"
+                style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+                <source src="static/videos/task-video.mp4" type="video/mp4">
+              </video>
 
-          </br>
-          <h2 class="title is-4">Baselines</h2>
-          <div class="content has-text-justified">
-            <!--TODO: Insert graph-->
-            <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselins, and
-              other sim2real methods. We find our method outperforms all 3. Given 100 real demonstrations, it increases
-              performance by an average of 30 percent over the best no pretraining baseline in which we initialize the
-              CNN from stratch and train via BC on either just real, or both simulated and real demonstrations. Compared
-              to R3M as a pretrained baseline, it increases perfomacne over 30% and over 50% compared to CLIP. It also
-              outperforms all 3 of our prior sim2real baselines by an even higher margin, including MMD, domain
-              randomization, and Automatic Domain Randomization with Random Network Adversary.</p>
-          </div>
+            </div>
 
+            </br>
+            <h2 class="title is-4 has-text-justified">Baselines</h2>
+            <div class="content has-text-justified">
+              <!--TODO: Insert graph-->
+              <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselines,
+                and
+                other sim2real methods. We find our method outperforms all three. Given 100 real demonstrations, it
+                increases
+                performance by an average of 30 percent over the best no pretraining baseline in which we initialize the
+                CNN from stratch and train via BC on either just real, or both simulated and real demonstrations.
+                Compared
+                to R3M as a pretrained baseline, it increases perfomacne over 30%, and over 50% compared to CLIP. It
+                outperforms all three of our prior sim2real baselines by an even higher margin: MMD, domain
+                randomization, and Automatic Domain Randomization with Random Network Adversary.</p>
+            </div>
 
-          </br>
-          <h2 class="title is-4">Ablations</h2>
-          <div class="content has-text-justified">
-            <!--TODO: probably write about other things too?-->
-            <p>We perform an ablation to determine the effects of language by using an alternate pretraining objective
-              of classifying the stage of the trajectory rather than regressing to a language annotation. We find that
-              language provides a measurable benefit, especially in multi-step pick-and-place, perhaps because
-              pretraining with language leverages similarities language descriptions between the first and second steps
-              of the pick-and-place task. </p>
+            <div class="content is-centered">
+              <img src="static/images/graph100.png" alt="100 trajectory" width="80%" />
+            </div>
+
+            <div class="content is-centered hidden" id="graph50">
+              <img src="static/images/graph50.png" alt="100 trajectory" width="80%" />
+            </div>
+
+            <div class="content is-centered hidden" id="graph25">
+              <img src="static/images/graph25.png" alt="100 trajectory" width="80%" />
+            </div>
+            <div>
+              <button id="toggleButton" onclick="toggleImages()">Show 50 and 25 Trajectory Graphs</button>
+            </div>
+            <script>
+              function toggleImages() {
+                const image2 = document.getElementById('graph50');
+                const image3 = document.getElementById('graph25');
+                const button = document.getElementById('toggleButton');
+
+                image2.classList.toggle('hidden');
+                image3.classList.toggle('hidden');
+
+                if (image2.classList.contains('hidden')) {
+                  button.textContent = 'Show 50 and 25 Trajectory Graphs';
+                } else {
+                  button.textContent = 'Hide 50 and 25 Trajectory Graphs';
+                }
+              }
+            </script>
+
+            </br>
+            <h2 class="title is-4 has-text-justified">Ablations: Language</h2>
+            <div class="content has-text-justified">
+              <p>We perform an ablation to determine the effects of language by using an alternate pretraining objective
+                of classifying the stage of the trajectory rather than regressing to a language annotation. We find that
+                language provides a measurable benefit, especially in multi-step pick-and-place, perhaps because
+                pretraining with language leverages similarities language descriptions between the first and second
+                steps
+                of the pick-and-place task. </p>
+            </div>
+
+            </br>
+            <h2 class="title is-4 has-text-justified">Ablations: Language Granularity</h2>
+            <div class="content has-text-justified">
+              <!--TODO: language granularity-->
+              <p>To examine the impact of decreasing language granularity
+                on sim2real performance, we experiment with varying numbers of unique annotations on each trajectory. In
+                the extreme case, the
+                entire trajectory has only a single stage, which means that
+                all images across all trajectories of a task have the same
+                language description embedding. In general, decreasing language granularity hurts performance
+                slightly. Still, our method is robust to lower granularity, which
+                matches our hypothesis that our pretraining approach provides
+                significant performance gains simply by pushing sim and
+                real images into a similar embedding distribution even if the
+                language granularity is extremely coarse.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-  </section>
+    </section>
 
-  <!--BibTex citation -->
-  <!--TODO: Do BibTex-->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-      @inproceedings{yu2024natural,
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>
+      @inproceedings{yu2024lang4sim2real,
       title={Natural Language Can Help Bridge the Sim2Real Gap},
       author={Yu, Albert and Foote, Adeline and Mooney, Raymond and Martín-Martín, Roberto},
       booktitle={Robotics: Science and Systems (RSS), 2024},
       year={2024}
       }
       </code></pre>
-    </div>
-  </section>
-  <!--End BibTex citation -->
+      </div>
+    </section>
+    <!--End BibTex citation -->
 
 
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
 
-            <p>
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                target="_blank">Academic Project Page Template</a> which was adopted from the <a
-                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
-              <br> This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
+              <p>
+                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                  href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+                <br> This website is licensed under a <a rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                  Commons Attribution-ShareAlike 4.0 International License</a>.
+              </p>
 
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Statcounter tracking code -->
+    <!-- Statcounter tracking code -->
 
-  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-  <!-- End of Statcounter Code -->
+    <!-- End of Statcounter Code -->
 
 </body>
 
