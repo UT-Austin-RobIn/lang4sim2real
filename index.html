@@ -58,13 +58,15 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Natural Language Can Help Bridge
               the Sim2Real Gap</h1>
+            <span class="is-size-4 publication-venue">To appear in RSS 2024</span>
+            <p>&nbsp;</p>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://scholar.google.com/citations?user=ZzURcb4AAAAJ&hl=en" target="_blank">Albert
                   Yu</a>,</span>
               <span class="author-block">
-                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Adeline Foote</a>,</span>
+                <a href="">Adeline Foote</a>,</span>
               <span class="author-block">
                 <a href="https://www.cs.utexas.edu/~mooney/" target="_blank">Raymond Mooney</a>,</span>
               <span class="author-block">
@@ -81,22 +83,21 @@
 
                 <!-- TODO: Add github link-->
                 <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code (Coming soon)</span>
-                  </a>
-                </span>
-
-                <span class="link-block">
                   <a href="https://arxiv.org/pdf/2405.10020" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Will be released in June)</span>
                   </a>
                 </span>
               </div>
@@ -173,8 +174,8 @@
 
             <div class="publication-video">
               <!-- TODO: Add supplementary video -->
-              <iframe src="https://www.youtube.com/embed/7z6L_AGae6g" frameborder="0" allow="autoplay; encrypted-media"
-                allowfullscreen></iframe>
+              <!-- <iframe src="https://www.youtube.com/embed/7z6L_AGae6g" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe> -->
             </div>
           </div>
         </div>
@@ -184,17 +185,17 @@
   <!-- End youtube video -->
   <section class="section">
     <div class="container">
-      <h2 class="title is-2" style="text-align: center;">Overview</h2>
+      <h2 class="title is-2" style="text-align: center;">Our Approach Overview</h2>
       <div class="columns is-centered">
         <div class="column is-four-fifths is-centered has-text-centered">
           <div class="content has-text-justified">
             <p>
-              Lang4sim2real adopts the common pretrain-then-finetune learning paradigm. We first pretrain an image
-              backbone encoder on language-annotated images from both simulation and real-world demonstrations of a
-              task. This will facilitate policy learning later by preserving the semantic similarity of scenes in
-              images between the two domains. Then, we freeze this encoder and train a policy network composed of
-              trainable adapter modules and a policy head to perform behavioral cloning (BC) on action-labeled data from
-              both domains.
+              <ol>
+                <li>We pretrain an image backbone encoder on language-annotated images from both simulation and real-world demonstrations of a task.</li>
+                <li>We then freeze this encoder and use it as the backbone of our policy. We finetune trainable adapter modules and a policy head on action-labeled demonstrations from both sim and real tasks. </li>
+              </ol>
+
+              The pretraining in step 1 facilitates policy learning in step 2 by learning a representation that encodes scenes in both domains based on the shared semantics between the sim and real tasks.
             </p>
           </div>
           <div class="content">
@@ -212,14 +213,14 @@
         <div class="columns is-centered">
           <div class="column is-four-fifths is-centered has-text-centered">
             <div class="content has-text-justified">
-              <p>
+              <!-- <p>
                 We evaluate Lang4sim2real on three task suites agaist non-pretrained baselines, vision-language
                 pretraining baselines, and other sim2real methods on the following tasks. We also conduct ablations to
                 study the effect of language and language granularity on the performance of our method.
-              </p>
+              </p> -->
             </div>
             </br>
-            <h2 class="title is-4 has-text-justified">Task Suite</h2>
+            <h2 class="title is-4 has-text-justified">Task Suites</h2>
 
             <div class="content has-text-justified">
               <video poster="" id="task-video" autoplay controls muted loop height="100%"
@@ -233,17 +234,15 @@
             <h2 class="title is-4 has-text-justified">Baselines</h2>
             <div class="content has-text-justified">
               <!--TODO: Insert graph-->
-              <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselines,
-                and
-                other sim2real methods. We find our method outperforms all three. Given 100 real demonstrations, it
-                increases
-                performance by an average of 30 percent over the best no pretraining baseline in which we initialize the
-                CNN from stratch and train via BC on either just real, or both simulated and real demonstrations.
-                Compared
-                to R3M as a pretrained baseline, it increases perfomacne over 30%, and over 50% compared to CLIP. It
-                outperforms all three of our prior sim2real baselines by an even higher margin: MMD, domain
-                randomization, and Automatic Domain Randomization with Random Network Adversary.</p>
+              <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselines (R3M and CLIP),
+                and other popular sim2real methods (MMD, Domain Randomization, Automatic Domain Randomization with Random Network Adversary (ADR+RNA)).</p>
             </div>
+
+            <h2 class="title is-4 has-text-justified">Results</h2>
+            <div class="content has-text-justified">
+              <p>Our method outperforms all baselines. Despite being pretrained only on a few hundred trajectories of image-language pairs, our method outperforms CLIP and R3M, which were trained on internet-scale data.</p>
+            </div>
+
 
             <div class="content is-centered">
               <img src="static/images/graph100.png" alt="100 trajectory" width="80%" />
@@ -277,18 +276,19 @@
             </script>
 
             </br>
-            <h2 class="title is-4 has-text-justified">Ablations: Language</h2>
+            <h2 class="title is-4 has-text-justified">Ablations</h2>
+            <h2 class="title is-5 has-text-justified">What is the effect of language on pretraining?</h2>
             <div class="content has-text-justified">
-              <p>We perform an ablation to determine the effects of language by using an alternate pretraining objective
-                of classifying the stage of the trajectory rather than regressing to a language annotation. We find that
-                language provides a measurable benefit, especially in multi-step pick-and-place, perhaps because
-                pretraining with language leverages similarities language descriptions between the first and second
-                steps
-                of the pick-and-place task. </p>
+              <p>To quantify the impact of natural language on our pretraining approach, we use an alternate pretraining objective
+                of classifying the stage of the trajectory rather than regressing to the language annotation associated with that stage of the trajectory.
+                We find that language provides a measurable benefit of roughly 10-20% across our three task suites,
+                especially in multi-step pick-and-place, perhaps because
+                pretraining with language leverages similarities in language descriptions between the first and second
+                steps of the pick-and-place task. </p>
             </div>
 
             </br>
-            <h2 class="title is-4 has-text-justified">Ablations: Language Granularity</h2>
+            <h2 class="title is-5 has-text-justified">How granular does the language need to be?</h2>
             <div class="content has-text-justified">
               <!--TODO: language granularity-->
               <p>To examine the impact of decreasing language granularity
@@ -313,14 +313,12 @@
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>
-      @inproceedings{yu2024lang4sim2real,
+        <pre><code>@inproceedings{yu2024lang4sim2real,
       title={Natural Language Can Help Bridge the Sim2Real Gap},
       author={Yu, Albert and Foote, Adeline and Mooney, Raymond and Martín-Martín, Roberto},
       booktitle={Robotics: Science and Systems (RSS), 2024},
       year={2024}
-      }
-      </code></pre>
+}</code></pre>
       </div>
     </section>
     <!--End BibTex citation -->
@@ -333,13 +331,9 @@
             <div class="content">
 
               <p>
-                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                  target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                Template: <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank">Academic Project Page Template</a>, adopted from the <a
                   href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-                You are free to borrow the of this website, we just ask that you link back to this page in the footer.
-                <br> This website is licensed under a <a rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-                  Commons Attribution-ShareAlike 4.0 International License</a>.
               </p>
 
             </div>
