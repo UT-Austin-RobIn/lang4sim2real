@@ -28,6 +28,25 @@
     .hidden {
       display: none;
     }
+    .modern-button {
+      background-color: #333; /* Dark grey background */
+      border: none; /* Remove borders */
+      color: white; /* White text */
+      padding: 15px 32px; /* Some padding */
+      text-align: center; /* Center the text */
+      text-decoration: none; /* Remove underline */
+      display: inline-block; /* Get it to fit within the width of its container */
+      font-size: 16px; /* Increase font size */
+      margin: 4px 2px; /* Some margin */
+      cursor: pointer; /* Pointer/hand icon */
+      border-radius: 12px; /* Rounded corners */
+      transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .modern-button:hover {
+      background-color: #555; /* Lighter grey on hover */
+      transform: scale(1.05); /* Slightly enlarge the button */
+    }
   </style>
 
 
@@ -92,8 +111,7 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href=""
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -190,12 +208,15 @@
         <div class="column is-four-fifths is-centered has-text-centered">
           <div class="content has-text-justified">
             <p>
-              <ol>
-                <li>We pretrain an image backbone encoder on language-annotated images from both simulation and real-world demonstrations of a task.</li>
-                <li>We then freeze this encoder and use it as the backbone of our policy. We finetune trainable adapter modules and a policy head on action-labeled demonstrations from both sim and real tasks. </li>
-              </ol>
+            <ol>
+              <li>We pretrain an image backbone encoder on language-annotated images from both simulation and real-world
+                demonstrations of a task.</li>
+              <li>We then freeze this encoder and use it as the backbone of our policy. We finetune trainable adapter
+                modules and a policy head on action-labeled demonstrations from both sim and real tasks. </li>
+            </ol>
 
-              The pretraining in step 1 facilitates policy learning in step 2 by learning a representation that encodes scenes in both domains based on the shared semantics between the sim and real tasks.
+            The pretraining in step 1 facilitates policy learning in step 2 by learning a representation that encodes
+            scenes in both domains based on the shared semantics between the sim and real tasks.
             </p>
           </div>
           <div class="content">
@@ -234,13 +255,17 @@
             <h2 class="title is-4 has-text-justified">Baselines</h2>
             <div class="content has-text-justified">
               <!--TODO: Insert graph-->
-              <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselines (R3M and CLIP),
-                and other popular sim2real methods (MMD, Domain Randomization, Automatic Domain Randomization with Random Network Adversary (ADR+RNA)).</p>
+              <p>We evaluate against three classes of baselines: no pretraining, vision-language pretrained baselines
+                (R3M and CLIP),
+                and other popular sim2real methods (MMD, Domain Randomization, Automatic Domain Randomization with
+                Random Network Adversary (ADR+RNA)).</p>
             </div>
 
             <h2 class="title is-4 has-text-justified">Results</h2>
             <div class="content has-text-justified">
-              <p>Our method outperforms all baselines. Despite being pretrained only on a few hundred trajectories of image-language pairs, our method outperforms CLIP and R3M, which were trained on internet-scale data.</p>
+              <p>Our method outperforms all baselines. Despite being pretrained only on a few hundred trajectories of
+                image-language pairs, our method outperforms CLIP and R3M, which were trained on internet-scale data.
+              </p>
             </div>
 
 
@@ -256,7 +281,7 @@
               <img src="static/images/graph25.png" alt="100 trajectory" width="80%" />
             </div>
             <div>
-              <button id="toggleButton" onclick="toggleImages()">Show 50 and 25 Trajectory Graphs</button>
+              <button class="modern-button" id="toggleButton" onclick="toggleImages()">Show 50 and 25 Trajectory Graphs</button>
             </div>
             <script>
               function toggleImages() {
@@ -279,8 +304,10 @@
             <h2 class="title is-4 has-text-justified">Ablations</h2>
             <h2 class="title is-5 has-text-justified">What is the effect of language on pretraining?</h2>
             <div class="content has-text-justified">
-              <p>To quantify the impact of natural language on our pretraining approach, we use an alternate pretraining objective
-                of classifying the stage of the trajectory rather than regressing to the language annotation associated with that stage of the trajectory.
+              <p>To quantify the impact of natural language on our pretraining approach, we use an alternate pretraining
+                objective
+                of classifying the stage of the trajectory rather than regressing to the language annotation associated
+                with that stage of the trajectory.
                 We find that language provides a measurable benefit of roughly 10-20% across our three task suites,
                 especially in multi-step pick-and-place, perhaps because
                 pretraining with language leverages similarities in language descriptions between the first and second
@@ -303,6 +330,9 @@
                 real images into a similar embedding distribution even if the
                 language granularity is extremely coarse.
               </p>
+            </div>
+            <div class="content is-centered" id="table">
+              <img src="static/images/table-granularity.png" alt="table" width="80%" />
             </div>
           </div>
         </div>
