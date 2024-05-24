@@ -28,24 +28,39 @@
     .hidden {
       display: none;
     }
+
     .modern-button {
-      background-color: #333; /* Dark grey background */
-      border: none; /* Remove borders */
-      color: white; /* White text */
-      padding: 15px 32px; /* Some padding */
-      text-align: center; /* Center the text */
-      text-decoration: none; /* Remove underline */
-      display: inline-block; /* Get it to fit within the width of its container */
-      font-size: 16px; /* Increase font size */
-      margin: 4px 2px; /* Some margin */
-      cursor: pointer; /* Pointer/hand icon */
-      border-radius: 12px; /* Rounded corners */
-      transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+      background-color: #333;
+      /* Dark grey background */
+      border: none;
+      /* Remove borders */
+      color: white;
+      /* White text */
+      padding: 15px 32px;
+      /* Some padding */
+      text-align: center;
+      /* Center the text */
+      text-decoration: none;
+      /* Remove underline */
+      display: inline-block;
+      /* Get it to fit within the width of its container */
+      font-size: 16px;
+      /* Increase font size */
+      margin: 4px 2px;
+      /* Some margin */
+      cursor: pointer;
+      /* Pointer/hand icon */
+      border-radius: 12px;
+      /* Rounded corners */
+      transition: background-color 0.3s, transform 0.3s;
+      /* Smooth transition for hover effect */
     }
 
     .modern-button:hover {
-      background-color: #555; /* Lighter grey on hover */
-      transform: scale(1.05); /* Slightly enlarge the button */
+      background-color: #555;
+      /* Lighter grey on hover */
+      transform: scale(1.05);
+      /* Slightly enlarge the button */
     }
   </style>
 
@@ -133,7 +148,7 @@
 
         <video poster="" id="tree" autoplay controls muted loop height="100%">
           <!--  TODO: add teaser video -->
-          <source src="static/videos/teaser_40s_v1_handbraked.mp4" type="video/mp4">
+          <source src="static/videos/teaser.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -144,7 +159,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
+          <!-- <h2 class="title is-3">Abstract</h2> -->
           <div class="content has-text-justified">
             <p>
               The main challenge in learning image-conditioned
@@ -221,7 +236,27 @@
           </div>
           <div class="content">
             <img src="static/images/figure.png" alt="Figure 2" width="40%" />
+            <!--TODO:try splitting up image into two next to each other-->
           </div>
+
+          </br>
+          <h2 class="title is-4 has-text-justified">Language Labeline</h2>
+          <div class="content has-text-justified">
+            <p>We annotate trajectories with language labels.
+              Our scripted policy automatically applies labels to the demonstration
+              according to the progress and current stage of the trajectory (see video below).
+              We also show that we can label previously-collected trajectories using
+              off-the-shelf vision-language models. </p>
+          </div>
+          <div class="content has-text-justified"> <!--TODO: Slowdown video-->
+            <video poster="" id="annotation-video" autoplay controls muted loop height="100%"
+              style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
+              <source src="static/videos/annotations.mp4" type="video/mp4">
+            </video>
+
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -281,7 +316,8 @@
               <img src="static/images/graph25.png" alt="100 trajectory" width="80%" />
             </div>
             <div>
-              <button class="modern-button" id="toggleButton" onclick="toggleImages()">Show 50 and 25 Trajectory Graphs</button>
+              <button class="modern-button" id="toggleButton" onclick="toggleImages()">Show 50 and 25 Trajectory
+                Graphs</button>
             </div>
             <script>
               function toggleImages() {
