@@ -8,17 +8,6 @@ Most of our changes are in the following files:
 
 We also removed the `docs/` folder to streamline this folder.
 
-<p align="center">
-  <img width="24.0%" src="docs/images/task_lift.gif">
-  <img width="24.0%" src="docs/images/task_can.gif">
-  <img width="24.0%" src="docs/images/task_tool_hang.gif">
-  <img width="24.0%" src="docs/images/task_square.gif">
-  <img width="24.0%" src="docs/images/task_lift_real.gif">
-  <img width="24.0%" src="docs/images/task_can_real.gif">
-  <img width="24.0%" src="docs/images/task_tool_hang_real.gif">
-  <img width="24.0%" src="docs/images/task_transport.gif">
- </p>
-
 [**[Homepage]**](https://robomimic.github.io/) &ensp; [**[Documentation]**](https://robomimic.github.io/docs/introduction/overview.html) &ensp; [**[Study Paper]**](https://arxiv.org/abs/2108.03298) &ensp; [**[Study Website]**](https://robomimic.github.io/study/) &ensp; [**[ARISE Initiative]**](https://github.com/ARISE-Initiative)
 
 -------
@@ -32,32 +21,6 @@ We also removed the `docs/` folder to streamline this folder.
 **robomimic** is a framework for robot learning from demonstration.
 It offers a broad set of demonstration datasets collected on robot manipulation domains and offline learning algorithms to learn from these datasets.
 **robomimic** aims to make robot learning broadly *accessible* and *reproducible*, allowing researchers and practitioners to benchmark tasks and algorithms fairly and to develop the next generation of robot learning algorithms.
-
-## Core Features
-
-<p align="center">
-  <img width="50.0%" src="docs/images/core_features.png">
- </p>
-
-<!-- **Standardized Datasets**
-- Simulated and real-world tasks
-- Multiple environments and robots
-- Diverse human-collected and machine-generated datasets
-
-**Suite of Learning Algorithms**
-- Imitation Learning algorithms (BC, BC-RNN, HBC)
-- Offline RL algorithms (BCQ, CQL, IRIS, TD3-BC)
-
-**Modular Design**
-- Low-dim + Visuomotor policies
-- Diverse network architectures
-- Support for external datasets
-
-**Flexible Workflow**
-- Hyperparameter sweep tools
-- Dataset visualization tools
-- Generating new datasets -->
-
 
 ## Reproducing benchmarks
 
