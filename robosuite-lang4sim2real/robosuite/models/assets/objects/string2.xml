@@ -1,0 +1,154 @@
+
+<!DOCTYPE mujoco [
+    <!ENTITY size "0.01 0.006 0.01">
+    <!ENTITY posright "0 .03 0">
+    <!ENTITY posup "-.03 0 0">
+    <!ENTITY posleft "0 -0.03 0">
+    <!ENTITY friction "0">
+    <!ENTITY ballfriction "0 0.00 0.000">
+    <!ENTITY density "1">
+    <!ENTITY spheresize ".001 .001 .001">
+    <!ENTITY spherefriction ".1 0.005 0.0001">
+    <!ENTITY spheredensity "50">
+    <!ENTITY beadcolor "0.35 0.49 0.36 1">
+    <!ENTITY beadtype "capsule">
+    <!ENTITY beadorientation "0 0 0.707 0.707">
+]>
+
+<mujoco model="string2">
+  <worldbody>
+    <body>
+      <body name="object">
+        <body name="first_ball" pos="-.05 0 0">
+          <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+          <body name="second_ball" pos="&posright;">
+            <joint name="J1" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+            <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+            <body name="third_ball" pos="&posright;">
+              <joint name="J2" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+              <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+              <body name="fourth_ball" pos="&posright;">
+                <joint name="J3" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                <body name="fifth_ball" pos="&posright;">
+                  <joint name="J4" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                  <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                  <body name="sixth_ball" pos="&posup;">
+                    <joint name="J5" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                    <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                    <body name="seventh_ball" pos="&posup;">
+                      <joint name="J6" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                      <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                      <body name="eighth_ball" pos="&posup;">
+                        <joint name="J7" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                        <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                        <body name="ninth_ball" pos="&posleft;">
+                          <joint name="J8" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                          <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                          <body name="tenth_ball" pos="&posleft;">
+                            <joint name="J9" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                            <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                            <body name="eleventh_ball" pos="&posleft;">
+                              <joint name="J10" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                              <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                                <body name="twelvth_ball" pos="&posleft;">
+                                  <joint name="J11" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                                  <geom pos="0 0 0" size="&size;" type="&beadtype;" group="0" friction="&ballfriction;" density="&density;" rgba="&beadcolor;" quat="&beadorientation;"/>
+                                    <body name="thirteenth_ball" pos="0 -0.06 0">
+                                      <joint name="J12" type="ball" pos="0 0 0" frictionloss="&friction;"/>
+                                        <geom pos="0 0 0" size=".01 .02 .02" type="box" group="0" friction="10 .005 0.0001" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="50" rgba="0.97 .93 .89 1"/>
+               
+                <geom pos="-0.01 0.02 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.02 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.02 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.02 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.02 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.02 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.02 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.02 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.02 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.02 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.01 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.01 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.01 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.01 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.01 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.01 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.01 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.01 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.01 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.01 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.0 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.0 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.0 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.0 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.0 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.0 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.0 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.0 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 0.0 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 0.0 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.009999999999999998 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.009999999999999998 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.009999999999999998 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.009999999999999998 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.009999999999999998 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.009999999999999998 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.009999999999999998 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.009999999999999998 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.009999999999999998 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.009999999999999998 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.02 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.02 0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.02 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.02 0.01" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.02 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.02 0.0" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.02 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.02 -0.009999999999999998" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                
+                <geom pos="-0.01 -0.02 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                <geom pos="0.01 -0.02 -0.02" size="&spheresize;" type="sphere" group="0" friction="&spherefriction;" solimp="0.998 0.998 0.000" solref="0.001 1"  condim="4" density="5" rgba="1 0 0 1"/>
+                                       </body>
+                                </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+        </body>
+    <site rgba="0 0 0 0" size="0.005" pos="0 0 -0.05" name="bottom_site"/>
+    <site rgba="0 0 0 0" size="0.005" pos="0 0 0.01" name="top_site"/>
+    <site rgba="0 0 0 0" size="0.005" pos="0.04 0.03 0" name="horizontal_radius_site"/>
+    </body>
+  </worldbody>
+</mujoco>
