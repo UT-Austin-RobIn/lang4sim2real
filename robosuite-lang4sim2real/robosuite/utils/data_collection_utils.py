@@ -537,7 +537,7 @@ def post_process_hdf5(
         state_mode):
     baseDir = op.abspath(
         op.join(__file__, op.pardir, op.pardir, op.pardir, op.pardir))
-    prefix = "robomimic-391r"
+    prefix = "robomimic-lang4sim2real"
     convert_path = os.path.join(
         baseDir, prefix, "robomimic/scripts/conversion/convert_robosuite.py")
 
