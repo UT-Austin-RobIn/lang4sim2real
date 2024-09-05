@@ -1,0 +1,1 @@
+from robosuite.task_encoders.classifier import TrajMLPClassifier
