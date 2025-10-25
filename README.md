@@ -97,7 +97,7 @@ If you wish to run experiments with R3M as the visual backbone of the policy, se
 
 ## Step 1. Collect Sim+Real Data
 ### Option A: Download Our Datasets
-All our datasets are [on Box](https://utexas.box.com/s/jb4ybp6z93d69txnwtxjmn9epkag5ws3). However, the 2-step Pick-and-Place datasets are [on OneDrive](https://utexas-my.sharepoint.com/:f:/g/personal/ayms_utexas_edu/EpJvNuf-lvBHhCaFVrUqW_cBEYJcUkWU9Kc2QMsTxprUeQ?e=bTOSHa) due to being larger than the Box file size limit.
+All our datasets are [on Box](https://utexas.box.com/s/jb4ybp6z93d69txnwtxjmn9epkag5ws3). However, the 2-step Pick-and-Place datasets are [on OneDrive](https://utexas-my.sharepoint.com/:f:/g/personal/aey344_eid_utexas_edu/EpJvNuf-lvBHhCaFVrUqW_cBEYJcUkWU9Kc2QMsTxprUeQ) due to being larger than the Box file size limit.
 #### Pick-and-Place
 ##### sim2real
 [.../1pp_sim2real.hdf5](https://utexas.box.com/s/kpysx9fevilynm4clswzqfbz13pgn86c)
@@ -112,13 +112,13 @@ All our datasets are [on Box](https://utexas.box.com/s/jb4ybp6z93d69txnwtxjmn9ep
 
 #### 2-step Pick-and-Place
 ##### sim2real
-[.../2pp_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/ayms_utexas_edu/ER4uilUH-GFOr0flSZS60O8BnC0s6ysbzB28QstYXg_nug?e=5JTd6M)
+[.../2pp_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/aey344_eid_utexas_edu/ER4uilUH-GFOr0flSZS60O8BnC0s6ysbzB28QstYXg_nug)
 - 0-3: Sim prior domain, 1375 trajs/task, 320 timesteps/traj. 4 different robosuite objects for the four task indices.
 - 4-5: Real target domain, 102 trajs (task 4), 101 trajs (task 5), 45 timesteps/traj. carrot into bowl onto plate.
 
 
 ##### sim2sim
-[.../2pp_sim2sim.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/ayms_utexas_edu/EZcsujoMsr5Nn9sfMhdWw8QB8MgJ_QG83Fwjb0wWnz3w0w?e=UjXWIv)
+[.../2pp_sim2sim.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/aey344_eid_utexas_edu/EZcsujoMsr5Nn9sfMhdWw8QB8MgJ_QG83Fwjb0wWnz3w0w)
 - 0-3: Sim prior domain, 1375 trajs/task, 320 timesteps/traj. 4 different robosuite objects for the four task indices.
 - 4-7: Sim target domain, 100 trajs/task, 320 timesteps/traj. 4 different robosuite objects for the four task indices.
 
@@ -146,8 +146,8 @@ The task indices of the two baseline datasets are as described:
 - 6-7: Real prior task, target domain, 50 trajs/task. 18 timesteps/traj. paper box, forward or backward directions for the two task indices.
 
 #### 2-step Pick-and-Place
-[.../2pp_domain-rando_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/ayms_utexas_edu/ETZ3pQw5JBBLnqDrxWm9PcwBH_aV3yXNmkvooBhu6BbZ3w?e=JVfZBZ)
-[.../2pp_adr-rna_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/ayms_utexas_edu/EQHNhNB-l3hAjUvlALbhpmQB9g3ytbvz5ss29svXDr5i5w?e=6Vp0tQ)
+[.../2pp_domain-rando_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/aey344_eid_utexas_edu/ETZ3pQw5JBBLnqDrxWm9PcwBH_aV3yXNmkvooBhu6BbZ3w)
+[.../2pp_adr-rna_sim2real.hdf5](https://utexas-my.sharepoint.com/:u:/g/personal/aey344_eid_utexas_edu/EQHNhNB-l3hAjUvlALbhpmQB9g3ytbvz5ss29svXDr5i5w)
 The task indices of the two baseline datasets are as described:
 - 0-3: Sim prior domain, data collected from domain randomization or ADR+RNA. 1400 trajs/task, 320 timesteps/traj.
 - 4-5: Real target task, target domain, 102 trajs (task 4), 101 trajs (task 5), 45 timesteps/traj. carrot into bowl onto plate (forward and reverse task directions).
